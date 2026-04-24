@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dewald Digital prüft Websites, KI-Nutzung und digitale Prozesse kleiner Unternehmen auf typische Risiken, Barrierefreiheit und Verbesserungsmöglichkeiten." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dewald Digital prüft Websites, KI-Nutzung und digitale Prozesse kleiner Unternehmen auf typische Risiken, Barrierefreiheit und Verbesserungsmöglichkeiten.">
   <title>Dewald Digital | Website-Checks, KI-Audits & digitale Risikoanalysen</title>
-  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="icon" type="image/png" href="logo1.png">
 
   <style>
-    :root {
-      --bg: #f6f7f9;
-      --surface: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --accent: #111827;
-      --accent-soft: #eef0f3;
-      --max: 1120px;
-      --radius: 18px;
-      --shadow: 0 14px 35px rgba(17, 24, 39, 0.08);
+    * {
+      box-sizing: border-box;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.55;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f7f9;
+      color: #111827;
+      line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    p { margin-top: 0; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
-      width: min(calc(100% - 32px), var(--max));
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -44,28 +34,30 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(12px);
-      background: rgba(246, 247, 249, 0.92);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.95);
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
       padding: 14px 0;
-      gap: 20px;
     }
 
     .brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 160px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.15rem;
+      color: #111827;
     }
 
     .brand img {
-      height: 48px;
+      height: 70px;
       width: auto;
       display: block;
     }
@@ -74,54 +66,26 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      color: var(--muted);
       font-size: 0.95rem;
+      font-weight: 600;
+      color: #4b5563;
       flex-wrap: wrap;
     }
 
-    .nav-links a {
-      transition: 0.2s ease;
-      font-weight: 600;
-    }
-
     .nav-links a:hover {
-      color: var(--text);
+      color: #111827;
     }
 
     .nav-cta {
-      background: var(--accent);
-      color: #fff !important;
+      background: #111827;
+      color: white !important;
       padding: 9px 15px;
       border-radius: 999px;
-      font-weight: 800;
     }
 
-    .nav-cta:hover {
-      opacity: 0.9;
+    .hero {
+      padding: 70px 0 40px;
     }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 18px;
-      border-radius: 12px;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: #fff;
-      font-weight: 800;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--accent);
-    }
-
-    .hero { padding: 72px 0 36px; }
 
     .hero-grid {
       display: grid;
@@ -131,75 +95,101 @@
     }
 
     .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(17, 24, 39, 0.08);
     }
 
-    .hero-main { padding: 42px; }
+    .hero-main {
+      padding: 42px;
+    }
 
     .eyebrow {
       display: inline-block;
+      background: #eef0f3;
+      color: #6b7280;
+      padding: 8px 12px;
+      border-radius: 999px;
       font-size: 0.82rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--muted);
-      background: var(--accent-soft);
-      padding: 8px 11px;
-      border-radius: 999px;
-      margin-bottom: 16px;
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
     }
 
     h1, h2, h3 {
+      margin: 0 0 14px;
       line-height: 1.12;
       letter-spacing: -0.035em;
-      margin: 0 0 14px;
     }
 
     h1 {
-      font-size: clamp(2.15rem, 4.4vw, 4.35rem);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
       max-width: 13ch;
     }
 
-    h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); }
-    h3 { font-size: 1.18rem; }
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-top: 0;
+    }
 
     .lead {
-      font-size: 1.1rem;
       color: #374151;
-      max-width: 62ch;
-      margin: 0 0 24px;
+      font-size: 1.1rem;
+      max-width: 65ch;
+      margin-bottom: 24px;
     }
 
     .hero-points {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px 14px;
-      margin: 24px 0 28px;
-      color: #374151;
+      gap: 12px;
+      margin: 26px 0;
     }
 
     .hero-points div {
-      background: var(--accent-soft);
+      background: #eef0f3;
       padding: 12px 14px;
       border-radius: 12px;
-      font-size: 0.96rem;
       font-weight: 700;
+      color: #374151;
     }
 
-    .hero-actions {
+    .actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: #111827;
+      color: white;
+      border: 1px solid #111827;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #111827;
     }
 
     .meta {
+      color: #6b7280;
       font-size: 0.92rem;
-      color: var(--muted);
-      max-width: 70ch;
     }
 
     .hero-side {
@@ -210,10 +200,10 @@
     }
 
     .sidebox {
-      background: var(--accent-soft);
+      background: #eef0f3;
+      border: 1px solid #e5e7eb;
       border-radius: 14px;
       padding: 16px;
-      border: 1px solid var(--line);
     }
 
     .sidebox strong {
@@ -221,39 +211,67 @@
       margin-bottom: 8px;
     }
 
-    section { padding: 30px 0; }
+    section {
+      padding: 32px 0;
+    }
 
     .section-head {
-      margin-bottom: 18px;
-      max-width: 74ch;
+      max-width: 760px;
+      margin-bottom: 20px;
     }
 
     .section-head p {
-      margin: 0;
-      color: var(--muted);
+      color: #6b7280;
     }
 
-    .grid-2, .grid-3 {
+    .grid-3 {
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
 
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
 
-    .box { padding: 26px; }
+    .box {
+      padding: 26px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-item {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 22px;
+    }
 
     .tag {
       display: inline-block;
-      margin-bottom: 14px;
-      font-size: 0.8rem;
-      font-weight: 800;
-      background: var(--accent-soft);
+      background: #eef0f3;
+      color: #6b7280;
       border-radius: 999px;
       padding: 7px 10px;
-      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin: 8px 0;
     }
 
     .price {
@@ -264,29 +282,8 @@
     }
 
     .small {
-      color: var(--muted);
+      color: #6b7280;
       font-size: 0.92rem;
-    }
-
-    ul {
-      margin: 16px 0 0;
-      padding-left: 18px;
-    }
-
-    li { margin: 8px 0; }
-
-    .service-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .service-item {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px;
-      background: #fff;
     }
 
     .steps {
@@ -295,21 +292,13 @@
     }
 
     .step {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--surface);
-    }
-
-    .step strong {
-      display: block;
-      margin-bottom: 6px;
+      padding: 20px;
     }
 
     .notice {
-      border-left: 4px solid var(--accent);
-      background: #fff;
-      padding: 18px 20px;
+      background: white;
+      border-left: 4px solid #111827;
+      padding: 20px;
       border-radius: 14px;
       color: #374151;
     }
@@ -317,26 +306,34 @@
     .cta {
       padding: 34px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
       flex-wrap: wrap;
     }
 
     .footer {
-      padding: 30px 0 60px;
-      color: var(--muted);
+      padding: 32px 0 60px;
+      color: #6b7280;
       font-size: 0.92rem;
     }
 
-    .footer a { text-decoration: underline; }
+    .footer a {
+      text-decoration: underline;
+    }
 
-    @media (max-width: 920px) {
-      .hero-grid, .grid-2, .grid-3, .service-list {
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .service-list {
         grid-template-columns: 1fr;
       }
 
-      .hero-main, .hero-side, .box, .cta {
+      .hero-main,
+      .hero-side,
+      .box,
+      .cta {
         padding: 22px;
       }
 
@@ -346,24 +343,21 @@
       }
 
       .nav-links {
-        width: 100%;
         gap: 14px;
-      }
-
-      .brand img {
-        height: 42px;
       }
     }
   </style>
 </head>
+
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#" aria-label="Dewald Digital Startseite">
-        <img src="logo.png" alt="Dewald Digital Logo" />
+      <a class="brand" href="#">
+        <img src="logo.png" alt="Dewald Digital Logo">
+        <span>Dewald Digital</span>
       </a>
 
-      <div class="nav-links" aria-label="Hauptnavigation">
+      <div class="nav-links">
         <a href="#leistungen">Leistungen</a>
         <a href="#pakete">Pakete</a>
         <a href="#ablauf">Ablauf</a>
@@ -388,14 +382,14 @@
           <div>Marketing, Bewertungen & Direktwerbung</div>
         </div>
 
-        <div class="hero-actions">
+        <div class="actions">
           <a class="btn" href="#kontakt">Kostenlose Erstprüfung anfragen</a>
           <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
         </div>
 
-        <div class="meta">
+        <p class="meta">
           Hinweis: Die Checks sind praxisnahe Ersteinschätzungen und keine Rechtsberatung. Bei verbindlichen juristischen Fragen sollte eine spezialisierte Rechtsberatung hinzugezogen werden.
-        </div>
+        </p>
       </div>
 
       <aside class="card hero-side">
@@ -419,8 +413,9 @@
     <div class="container">
       <div class="section-head">
         <h2>Viele Risiken entstehen nicht absichtlich, sondern aus Zeitmangel.</h2>
-        <p>Impressum, Datenschutz, Cookies, Tracking, KI-Inhalte, Barrierefreiheit, Bewertungen und Newsletter werden im Alltag oft nebenbei erledigt. Genau dadurch entstehen Lücken, die später teuer oder zumindest unangenehm werden können.</p>
+        <p>Impressum, Datenschutz, Cookies, Tracking, KI-Inhalte, Barrierefreiheit, Bewertungen und Newsletter werden im Alltag oft nebenbei erledigt. Dadurch entstehen Lücken, die später teuer oder unangenehm werden können.</p>
       </div>
+
       <div class="grid-3">
         <div class="card box">
           <h3>Unklare Website-Pflichten</h3>
@@ -530,10 +525,10 @@
 
       <div class="grid-3">
         <article class="card box">
-          <div class="tag">Start</div>
+          <span class="tag">Start</span>
           <h3>Website Risiko-Check</h3>
           <p>Kurzanalyse Ihrer Website auf auffällige Risiken bei Datenschutz-Basics, Cookie-Hinweisen, externen Tools, Inhalten und Barrierefreiheits-Basics.</p>
-          <div class="price">ab 149 €</div>
+          <div class="price">ab 49 €</div>
           <div class="small">für kleine Websites</div>
           <ul>
             <li>1 Website</li>
@@ -543,10 +538,10 @@
         </article>
 
         <article class="card box">
-          <div class="tag">KI</div>
+          <span class="tag">KI</span>
           <h3>KI Quick Audit</h3>
           <p>Strukturierte Ersteinschätzung Ihrer KI-Nutzung im Unternehmen: Tools, Inhalte, Kundendaten, Freigabeprozesse und einfache interne Regeln.</p>
-          <div class="price">ab 199 €</div>
+          <div class="price">ab 99 €</div>
           <div class="small">inkl. Fragebogen</div>
           <ul>
             <li>KI-Nutzungsfragebogen</li>
@@ -556,10 +551,10 @@
         </article>
 
         <article class="card box">
-          <div class="tag">Betreuung</div>
+          <span class="tag">Betreuung</span>
           <h3>Monatlicher Digital-Check</h3>
           <p>Regelmäßige Überprüfung Ihrer Website und digitalen Außenwirkung nach Änderungen, neuen Tools oder neuen Kampagnen.</p>
-          <div class="price">ab 79 € / Monat</div>
+          <div class="price">ab 39 € / Monat</div>
           <div class="small">nach Erstcheck möglich</div>
           <ul>
             <li>monatliche oder quartalsweise Prüfung</li>
@@ -578,26 +573,10 @@
         <p>Einfacher Einstieg, klare Auswertung, keine unnötigen Meetings.</p>
       </div>
       <div class="steps">
-        <div class="step card">
-          <strong>1. Anfrage senden</strong>
-          Sie nennen kurz Ihre Website und den gewünschten Schwerpunkt: Website, KI, Barrierefreiheit, Marketing oder laufende Betreuung.
-        </div>
-        <div class="step card">
-          <strong>2. Umfang klären</strong>
-          Sie erhalten eine kurze Rückmeldung, welches Paket sinnvoll ist und welche Informationen benötigt werden.
-        </div>
-        <div class="step card">
-          <strong>3. Analyse durchführen</strong>
-          Dewald Digital prüft Website, Inhalte, Tools oder KI-Nutzung anhand einer strukturierten Checkliste.
-        </div>
-        <div class="step card">
-          <strong>4. Ergebnis erhalten</strong>
-          Sie erhalten einen verständlichen Bericht mit Ampelbewertung, Prioritäten und konkreten nächsten Schritten.
-        </div>
-        <div class="step card">
-          <strong>5. Optional: Umsetzung oder Nachprüfung</strong>
-          Auf Wunsch werden einfache Verbesserungen begleitet oder spätere Nachprüfungen vereinbart.
-        </div>
+        <div class="card step"><strong>1. Anfrage senden</strong>Sie nennen kurz Ihre Website und den gewünschten Schwerpunkt.</div>
+        <div class="card step"><strong>2. Umfang klären</strong>Sie erhalten eine kurze Rückmeldung, welches Paket sinnvoll ist.</div>
+        <div class="card step"><strong>3. Analyse durchführen</strong>Dewald Digital prüft Website, Inhalte, Tools oder KI-Nutzung anhand einer strukturierten Checkliste.</div>
+        <div class="card step"><strong>4. Ergebnis erhalten</strong>Sie erhalten einen verständlichen Bericht mit Prioritäten und konkreten nächsten Schritten.</div>
       </div>
     </div>
   </section>
@@ -609,18 +588,9 @@
         <p>Der Fokus liegt auf Verständlichkeit, Priorisierung und pragmatischer Umsetzung für kleine Unternehmen.</p>
       </div>
       <div class="grid-3">
-        <div class="card box">
-          <h3>Verständlich</h3>
-          <p>Sie erhalten keine unübersichtliche Fachabhandlung, sondern eine klare Einschätzung mit konkreten Handlungspunkten.</p>
-        </div>
-        <div class="card box">
-          <h3>Pragmatisch</h3>
-          <p>Der Einstieg ist bewusst klein gehalten. Erst prüfen, dann priorisieren, dann gezielt verbessern.</p>
-        </div>
-        <div class="card box">
-          <h3>Für KMU gedacht</h3>
-          <p>Die Leistungen richten sich an kleine Unternehmen, die keine eigene Rechts-, IT- oder Compliance-Abteilung haben.</p>
-        </div>
+        <div class="card box"><h3>Verständlich</h3><p>Sie erhalten keine unübersichtliche Fachabhandlung, sondern eine klare Einschätzung mit konkreten Handlungspunkten.</p></div>
+        <div class="card box"><h3>Pragmatisch</h3><p>Der Einstieg ist bewusst klein gehalten. Erst prüfen, dann priorisieren, dann gezielt verbessern.</p></div>
+        <div class="card box"><h3>Für KMU gedacht</h3><p>Die Leistungen richten sich an kleine Unternehmen, die keine eigene Rechts-, IT- oder Compliance-Abteilung haben.</p></div>
       </div>
     </div>
   </section>
@@ -640,9 +610,7 @@
           <h2>Kostenlose Erstprüfung anfragen</h2>
           <p>Schreiben Sie kurz, welche Website geprüft werden soll und ob es zusätzlich um KI-Nutzung, Barrierefreiheit oder Marketinginhalte geht.</p>
         </div>
-        <div>
-          <a class="btn" href="mailto:info@dewald-digital.de?subject=Anfrage%20Dewald%20Digital%20Erstpruefung">E-Mail schreiben</a>
-        </div>
+        <a class="btn" href="mailto:info@dewald-digital.de?subject=Anfrage%20Dewald%20Digital%20Erstpruefung">E-Mail schreiben</a>
       </div>
     </div>
   </section>
