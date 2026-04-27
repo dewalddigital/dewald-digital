@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Dewald Digital prüft Websites, KI-Nutzung und digitale Prozesse kleiner Unternehmen auf typische Risiken, Barrierefreiheit und Verbesserungsmöglichkeiten.">
-  <title></title>
-<link rel="icon" type="image/png" href="logo1.png">
+  <title>Dewald Digital | Website-Checks, KI-Audits & digitale Risikoanalysen</title>
   <link rel="icon" type="image/png" href="logo1.png">
 
   <style>
@@ -26,60 +25,65 @@
       text-decoration: none;
     }
 
-.container {
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
-}
-    
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 0;
-  height: 190px ;
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #e5e7eb;
-}
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  line-height: 0;
-}
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+    }
 
-.brand img {
-  height: 240px;
-  width: auto;
-  display: block;
-  margin-bottom: -20px;
-}
+    .nav-inner {
+      height: 116px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #4b5563;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
 
-.nav-links a:hover {
-  color: #111827;
-}
+    .brand img {
+      height: 94px;
+      width: auto;
+      display: block;
+    }
 
-.nav-cta {
-  background: #111827;
-  color: #fff !important;
-  padding: 12px 22px;
-  border-radius: 999px;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 34px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #4b5563;
+      letter-spacing: -0.02em;
+      flex-wrap: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: #111827;
+    }
+
+    .nav-cta {
+      background: #111827;
+      color: white !important;
+      padding: 12px 22px;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.18);
+    }
+
     .hero {
       padding: 70px 0 40px;
     }
@@ -88,7 +92,7 @@
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 24px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .card {
@@ -320,6 +324,10 @@
     }
 
     @media (max-width: 900px) {
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
       .hero-grid,
       .grid-2,
       .grid-3,
@@ -335,12 +343,25 @@
       }
 
       .nav-inner {
-        align-items: flex-start;
-        flex-direction: column;
+        height: auto;
+        min-height: 84px;
+        align-items: center;
+        flex-direction: row;
+        gap: 16px;
+      }
+
+      .brand img {
+        height: 68px;
       }
 
       .nav-links {
-        gap: 14px;
+        gap: 12px;
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+
+      .nav-cta {
+        padding: 8px 13px;
       }
     }
   </style>
@@ -349,9 +370,8 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#">
+      <a class="brand" href="#" aria-label="Dewald Digital Startseite">
         <img src="logo.png" alt="Dewald Digital Logo">
-        <span></span>
       </a>
 
       <div class="nav-links">
@@ -367,11 +387,7 @@
     <div class="container hero-grid">
       <div class="card hero-main">
         <div class="eyebrow">Digitale Risiko-Checks für kleine Unternehmen</div>
-        <h1>
-  Website Checks<br>
-  KI Audits<br>
-  Maßnahmen
-</h1>        
+        <h1>Website-Checks<br>KI-Audits<br>und klare nächste Schritte.</h1>
         <p class="lead">
           Dewald Digital prüft Websites, KI-Nutzung und digitale Außenauftritte kleiner Unternehmen auf typische Risiken, Schwachstellen und Verbesserungspotenziale – verständlich, strukturiert und ohne unnötige Fachsprache.
         </p>
@@ -404,7 +420,7 @@
         </div>
         <div class="sidebox">
           <strong>Warum jetzt?</strong>
-          Websites, KI-Tools und Online-Marketing werden durch Gesetzesvorgaben der Europäischen Union stärker reguliert. Viele kleine Betriebe haben dafür keine interne Zuständigkeit.
+          Websites, KI-Tools und Online-Marketing werden stärker reguliert. Viele kleine Betriebe haben dafür keine interne Zuständigkeit.
         </div>
       </aside>
     </div>
@@ -574,10 +590,10 @@
         <p>Einfacher Einstieg, klare Auswertung, keine unnötigen Meetings.</p>
       </div>
       <div class="steps">
-        <div class="card step"><strong>1. Anfrage senden </strong> Sie nennen kurz Ihre Website und den gewünschten Schwerpunkt.</div>
-        <div class="card step"><strong>2. Umfang klären </strong> Sie erhalten eine kurze Rückmeldung, welches Paket sinnvoll ist.</div>
-        <div class="card step"><strong>3. Analyse durchführen </strong> Dewald Digital prüft Website, Inhalte, Tools oder KI-Nutzung anhand einer strukturierten Checkliste.</div>
-        <div class="card step"><strong>4. Ergebnis erhalten </strong> Sie erhalten einen verständlichen Bericht mit Prioritäten und konkreten nächsten Schritten.</div>
+        <div class="card step"><strong>1. Anfrage senden</strong>Sie nennen kurz Ihre Website und den gewünschten Schwerpunkt.</div>
+        <div class="card step"><strong>2. Umfang klären</strong>Sie erhalten eine kurze Rückmeldung, welches Paket sinnvoll ist.</div>
+        <div class="card step"><strong>3. Analyse durchführen</strong>Dewald Digital prüft Website, Inhalte, Tools oder KI-Nutzung anhand einer strukturierten Checkliste.</div>
+        <div class="card step"><strong>4. Ergebnis erhalten</strong>Sie erhalten einen verständlichen Bericht mit Prioritäten und konkreten nächsten Schritten.</div>
       </div>
     </div>
   </section>
@@ -599,7 +615,7 @@
   <section id="hinweis">
     <div class="container">
       <div class="notice">
-        <strong>Wichtiger Hinweis:</strong> Dewald Digital bietet strukturierte Prüfungen, Risikoübersichten, Handlungsempfehlungen und Umsetzungsbegleitung im digitalen Raum. Die Leistungen ersetzen keine verbindliche juristische Prüfung durch eine zugelassene Rechtsanwältin oder einen zugelassenen Rechtsanwalt.
+        <strong>Wichtiger Hinweis:</strong> Dewald Digital bietet strukturierte Prüfungen, Risikoübersichten, Handlungsempfehlungen und Umsetzungsbegleitung im digitalen Raum. Die Leistungen ersetzen keine Rechtsberatung und keine verbindliche juristische Prüfung durch eine zugelassene Rechtsanwältin oder einen zugelassenen Rechtsanwalt.
       </div>
     </div>
   </section>
@@ -618,9 +634,9 @@
 
   <footer class="footer">
     <div class="container">
-      <div><strong></strong>  Marc Dewald-Krause · 46286 Dorsten · <a href="mailto:info@dewald-digital.de">info@dewald-digital.de</a></div>
+      <div><strong>Dewald Digital</strong> · Marc Dewald-Krause · 46286 Dorsten · <a href="mailto:info@dewald-digital.de">info@dewald-digital.de</a></div>
       <div style="margin-top: 8px;"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
-      <div style="margin-top: 8px;">Hinweis: Die angebotenen Überprüfungen sind praxisnahe Audits und keine klassische Rechtsberatung.</div>
+      <div style="margin-top: 8px;">Hinweis: Die angebotenen Checks sind praxisnahe Ersteinschätzungen und keine Rechtsberatung.</div>
     </div>
   </footer>
 </body>
