@@ -3,243 +3,747 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Dewald Digital</title>
-
-  <!-- Favicon -->
+  <meta name="description" content="Dewald Digital prüft Websites, KI-Nutzung, Barrierefreiheit und digitale Außenauftritte kleiner Unternehmen auf typische Risiken und konkrete Verbesserungsmöglichkeiten.">
+  <title>Dewald Digital | Website-Checks, KI-Audits & digitale Risikoanalysen</title>
   <link rel="icon" type="image/png" href="logo1.png">
-  <link rel="apple-touch-icon" href="logo1.png">
 
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f7f8fa;
-      color: #111827;
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #5f6673;
+      --soft: #eef1f6;
+      --line: #e5e7eb;
+      --accent: #0f172a;
+      --accent-2: #2563eb;
+      --success: #10b981;
+      --max: 1180px;
+      --radius: 24px;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
     }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    p { margin-top: 0; }
+
     .container {
-      width: min(1120px, calc(100% - 32px));
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
 
-    /* HEADER */
+    .topbar {
+      background: #0f172a;
+      color: #fff;
+      font-size: 0.92rem;
+      padding: 10px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .topbar strong { color: #bfdbfe; }
+
     .nav {
       position: sticky;
       top: 0;
       z-index: 100;
       height: 100px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229,231,235,0.9);
       display: flex;
       align-items: center;
-      background: rgba(255,255,255,0.95);
-      border-bottom: 1px solid #e5e7eb;
     }
 
     .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      line-height: 0;
     }
 
     .brand img {
-      height: 70px;
+      height: 82px;
+      width: auto;
       display: block;
     }
 
-    .nav-links a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #4b5563;
-      font-weight: 600;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.97rem;
+      white-space: nowrap;
     }
 
-    /* HERO */
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.18);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(15,23,42,0.18);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
     .hero {
-      padding: 40px 0;
+      padding: 56px 0 26px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 52px;
       align-items: center;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      line-height: 1.2;
-    }
-
-    .hero p {
-      color: #6b7280;
-    }
-
-    .hero img {
-      width: 100%;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #111827;
-      color: white;
-      text-decoration: none;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-2);
+      background: #eaf1ff;
+      border: 1px solid #dbeafe;
       border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
-    /* SECTIONS */
-    .section {
-      padding: 60px 0;
+    h1, h2, h3 {
+      margin: 0 0 14px;
+      letter-spacing: -0.045em;
+      line-height: 1.08;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+    h1 {
+      font-size: clamp(2.7rem, 5.2vw, 5.4rem);
+      max-width: 10ch;
+    }
+
+    h2 { font-size: clamp(2rem, 3.6vw, 3.6rem); }
+    h3 { font-size: 1.28rem; }
+
+    .lead {
+      font-size: 1.17rem;
+      color: #384152;
+      max-width: 64ch;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 26px 0 22px;
+    }
+
+    .hero-proof {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 650;
+    }
+
+    .hero-proof span {
+      display: inline-flex;
       align-items: center;
+      gap: 6px;
     }
 
-    .grid img {
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      display: inline-block;
+    }
+
+    .visual-card {
+      background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px -80px auto auto;
+      width: 210px;
+      height: 210px;
+      background: rgba(37, 99, 235, 0.10);
+      border-radius: 50%;
+    }
+
+    .visual-card img {
       width: 100%;
+      display: block;
+      position: relative;
+      z-index: 1;
     }
 
-    /* PRICING */
-    .pricing {
+    .trust-strip {
+      padding: 22px 0 40px;
+    }
+
+    .trust-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      box-shadow: 0 10px 30px rgba(15,23,42,.05);
+    }
+
+    .trust-item {
+      background: var(--soft);
+      border-radius: 16px;
+      padding: 14px;
+      font-weight: 800;
+      color: #374151;
+      text-align: center;
+    }
+
+    section { padding: 68px 0; }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .card {
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
+    .feature-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px;
     }
+
+    .feature-card .number {
+      display: inline-flex;
+      background: #eaf1ff;
+      color: var(--accent-2);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .split.reverse {
+      grid-template-columns: 1.05fr .95fr;
+    }
+
+    .split-visual {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .split-visual img {
+      width: 100%;
+      display: block;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .check-list div {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: #374151;
+      font-weight: 650;
+    }
+
+    .manual-auto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .compare-card {
+      border-radius: 26px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .compare-card.dark {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .compare-card.dark p,
+    .compare-card.dark li { color: #d1d5db; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 330px;
+    }
+
+    .price-card.highlight {
+      border: 2px solid var(--accent);
+      transform: translateY(-8px);
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 950;
+      letter-spacing: -0.05em;
+      margin: 18px 0 6px;
+    }
+
+    .small { color: var(--muted); font-size: .95rem; }
+
+    ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: #374151;
+    }
+
+    li { margin: 8px 0; }
+
+    .final-cta {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 34px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 30px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .final-cta p { color: #d1d5db; }
+    .final-cta .btn { background: #fff; color: var(--accent); border-color: #fff; }
+    .final-cta img { width: 100%; display: block; }
 
     footer {
-      margin-top: 60px;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #6b7280;
+      padding: 40px 0 70px;
+      color: var(--muted);
+      font-size: .92rem;
     }
 
-    @media (max-width: 768px) {
-      .hero-grid, .grid, .pricing {
+    footer a { text-decoration: underline; }
+
+    @media (max-width: 920px) {
+      .topbar { display: none; }
+
+      .nav {
+        height: auto;
+        padding: 12px 0;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        gap: 14px;
+        flex-direction: column;
+      }
+
+      .brand img { height: 64px; }
+
+      .nav-links {
+        width: 100%;
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .hero-grid,
+      .split,
+      .split.reverse,
+      .manual-auto,
+      .pricing-grid,
+      .final-cta {
         grid-template-columns: 1fr;
       }
+
+      .feature-grid,
+      .trust-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 34px; }
+      section { padding: 44px 0; }
+      .visual-card, .split-visual, .final-cta { padding: 24px; }
+      .price-card.highlight { transform: none; }
     }
   </style>
 </head>
 
 <body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><strong>Neue Anforderungen für Websites, KI und Barrierefreiheit?</strong></span>
+      <span>Dewald Digital macht sichtbar, wo Handlungsbedarf besteht.</span>
+    </div>
+  </div>
 
-  <!-- HEADER -->
-  <div class="nav">
+  <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">
+      <a class="brand" href="#" aria-label="Dewald Digital Startseite">
         <img src="logo.png" alt="Dewald Digital Logo">
-      </div>
+      </a>
+
       <div class="nav-links">
-        <a href=\"#leistungen\">Leistungen</a>
-        <a href=\"#preise\">Preise</a>
-        <a href=\"#kontakt\">Kontakt</a>
+        <a href="#plattform">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#preise">Preise</a>
+        <a href="#kontakt" class="nav-cta">Check anfragen</a>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <!-- HERO -->
-  <div class="hero container">
-    <div class="hero-grid">
+  <header class="hero">
+    <div class="container hero-grid">
       <div>
-        <h1>
-          Website-Checks<br>
-          KI-Audits<br>
-          und klare nächste Schritte
-        </h1>
-        <p>
-          Zwischen Vorschrift und Praxis – wir schaffen Klarheit.
+        <div class="eyebrow">Website · KI · BFSG · Datenschutz</div>
+        <h1>Digitale Risiken sichtbar machen.</h1>
+        <p class="lead">
+          Zwischen Vorschrift und Praxis schaffen wir Klarheit: Dewald Digital prüft Websites, KI-Nutzung und digitale Außenauftritte kleiner Unternehmen auf typische Risiken und konkrete Verbesserungsmöglichkeiten.
         </p>
-        <a href=\"mailto:info@dewald-digital.de\" class=\"btn\">Risiko-Check starten</a>
+
+        <div class="hero-actions">
+          <a class="btn" href="mailto:info@dewald-digital.de?subject=Anfrage%20Website-Risiko-Check">Risiko-Check starten</a>
+          <a class="btn btn-secondary" href="#ablauf">So funktioniert's</a>
+        </div>
+
+        <div class="hero-proof">
+          <span><i class="dot"></i> verständliche Auswertung</span>
+          <span><i class="dot"></i> klare Maßnahmen</span>
+          <span><i class="dot"></i> keine Rechtsberatung</span>
+        </div>
+      </div>
+
+      <div class="visual-card">
+        <img src="hero.svg" alt="Digitale Risikoanalyse und Sicherheitsprüfung">
+      </div>
+    </div>
+  </header>
+
+  <div class="trust-strip">
+    <div class="container trust-box">
+      <div class="trust-item">DSGVO-Basics</div>
+      <div class="trust-item">KI-Nutzung</div>
+      <div class="trust-item">BFSG-Check</div>
+      <div class="trust-item">Online-Marketing</div>
+    </div>
+  </div>
+
+  <section id="plattform">
+    <div class="container">
+      <div class="section-head">
+        <h2>Eine Prüfung, mehrere Blickwinkel.</h2>
+        <p>
+          Viele kleine Unternehmen haben keine interne Rechts-, IT- oder Compliance-Abteilung. Deshalb bündelt Dewald Digital die wichtigsten digitalen Prüfpunkte in einem klaren, verständlichen Check.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="number">01</span>
+          <h3>Website Risiko-Check</h3>
+          <p>Prüfung typischer Website-Risiken: Impressum, Datenschutz, Cookies, Tracking, externe Dienste, Kontaktwege und sichtbare Schwachstellen.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="number">02</span>
+          <h3>KI Quick Audit</h3>
+          <p>Ersteinschätzung Ihrer KI-Nutzung: Tools, Inhalte, Kundendaten, Freigaben, Kennzeichnung und einfache interne Regeln.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="number">03</span>
+          <h3>BFSG-Basischeck</h3>
+          <p>Sichtprüfung auf typische Barrieren: Kontrast, Lesbarkeit, Struktur, Navigation, Formulare und mobile Nutzung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split">
+      <div class="split-visual">
+        <img src="problem.svg" alt="Digitale Unsicherheit und Website-Risiken">
       </div>
       <div>
-        <img src=\"hero.svg\">
+        <div class="eyebrow">Problem</div>
+        <h2>Viele Websites sind gewachsen. Nicht geprüft.</h2>
+        <p class="lead">
+          Cookies wurden ergänzt, Texte verändert, Tools eingebunden, Social Media verknüpft, vielleicht KI genutzt. Im Alltag fällt kaum auf, ob daraus neue Risiken entstehen.
+        </p>
+        <div class="check-list">
+          <div>Cookie- und Tracking-Einstellungen unklar</div>
+          <div>Datenschutzerklärung nicht mehr passend</div>
+          <div>KI-Inhalte oder Tools ohne interne Regeln</div>
+          <div>Barrierefreiheit nicht systematisch geprüft</div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- PROBLEM -->
-  <div class=\"section container\">
-    <div class=\"grid\">
-      <img src=\"problem.svg\">
+  <section id="ablauf">
+    <div class="container split reverse">
       <div>
-        <h2>Viele Websites sind aktuell nicht mehr sauber aufgestellt</h2>
-        <p>DSGVO, KI-Gesetz und Barrierefreiheit betreffen mittlerweile fast jede Website.</p>
+        <div class="eyebrow">Ablauf</div>
+        <h2>Vom Bauchgefühl zur klaren Maßnahmenliste.</h2>
+        <p class="lead">
+          Sie erhalten keine lange Theorie, sondern eine strukturierte Übersicht: Was ist auffällig? Wie kritisch ist es? Was sollte zuerst angepasst werden?
+        </p>
+        <div class="check-list">
+          <div><strong>1. Website oder KI-Nutzung nennen</strong><br>Sie senden Link und Schwerpunkt.</div>
+          <div><strong>2. Strukturierte Prüfung</strong><br>Wir prüfen anhand fester Kriterien.</div>
+          <div><strong>3. Ergebnis erhalten</strong><br>Sie bekommen klare Maßnahmen und Prioritäten.</div>
+        </div>
+      </div>
+      <div class="split-visual">
+        <img src="analyse.svg" alt="Analyse der Website und digitalen Prozesse">
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ANALYSE -->
-  <div class=\"section container\">
-    <div class=\"grid\">
+  <section>
+    <div class="container split">
+      <div class="split-visual">
+        <img src="loesung.svg" alt="Klare Maßnahmen und digitale Ordnung">
+      </div>
       <div>
-        <h2>Wir prüfen Ihre Website strukturiert</h2>
-        <p>Sie sehen klar, wo Risiken bestehen und was zu tun ist.</p>
+        <div class="eyebrow">Lösung</div>
+        <h2>Klare Maßnahmen statt Unsicherheit.</h2>
+        <p class="lead">
+          Der Check zeigt Ihnen nicht nur, dass etwas auffällig ist, sondern auch, was sinnvollerweise als nächstes zu tun ist – verständlich, priorisiert und ohne Fachsprache.
+        </p>
+        <div class="check-list">
+          <div>Ampelbewertung: unkritisch, prüfen, dringend</div>
+          <div>Kurze Erklärung je Fund</div>
+          <div>Konkrete To-dos statt abstrakter Hinweise</div>
+          <div>Optionale Begleitung bei einfachen Anpassungen</div>
+        </div>
       </div>
-      <img src=\"analyse.svg\">
     </div>
-  </div>
+  </section>
 
-  <!-- LÖSUNG -->
-  <div class=\"section container\">
-    <div class=\"grid\">
-      <img src=\"loesung.svg\">
+  <section>
+    <div class="container">
+      <div class="manual-auto">
+        <div class="compare-card">
+          <h2>Ungeprüft</h2>
+          <p>Viele Betriebe verlassen sich darauf, dass ihre Website „schon passen wird“. Genau dort entstehen blinde Flecken.</p>
+          <ul>
+            <li>keine klare Zuständigkeit</li>
+            <li>veraltete Texte und Tools</li>
+            <li>Unsicherheit bei DSGVO, KI und BFSG</li>
+            <li>kein Überblick über Prioritäten</li>
+          </ul>
+        </div>
+        <div class="compare-card dark">
+          <h2>Geprüft</h2>
+          <p>Dewald Digital macht Risiken sichtbar und übersetzt Anforderungen in konkrete nächste Schritte.</p>
+          <ul>
+            <li>strukturierter Prüfbericht</li>
+            <li>verständliche Risikoübersicht</li>
+            <li>klare Maßnahmen</li>
+            <li>optional laufende Nachprüfung</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preise">
+    <div class="container">
+      <div class="section-head">
+        <h2>Einfach starten. Später ausbauen.</h2>
+        <p>Die Einstiegspakete sind bewusst kompakt gehalten. Ziel ist schnelle Klarheit statt eines großen Beratungsprojekts.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div>
+            <h3>Website Risiko-Check</h3>
+            <p class="small">Für kleine Websites und lokale Unternehmen</p>
+            <div class="price">49 €</div>
+            <ul>
+              <li>Website-Basisprüfung</li>
+              <li>DSGVO-/Cookie-Sichtcheck</li>
+              <li>BFSG-Basisindikatoren</li>
+              <li>kurze Maßnahmenliste</li>
+            </ul>
+          </div>
+          <a class="btn" href="mailto:info@dewald-digital.de?subject=Anfrage%20Website%20Risiko-Check">Anfragen</a>
+        </div>
+
+        <div class="price-card highlight">
+          <div>
+            <h3>KI Quick Audit</h3>
+            <p class="small">Für Betriebe, die KI-Tools nutzen oder einführen</p>
+            <div class="price">99 €</div>
+            <ul>
+              <li>KI-Nutzungsfragebogen</li>
+              <li>Risikoübersicht</li>
+              <li>Hinweise zu Kundendaten</li>
+              <li>erste interne Regeln</li>
+            </ul>
+          </div>
+          <a class="btn" href="mailto:info@dewald-digital.de?subject=Anfrage%20KI%20Quick%20Audit">Anfragen</a>
+        </div>
+
+        <div class="price-card">
+          <div>
+            <h3>Monatlicher Digital-Check</h3>
+            <p class="small">Für laufende Änderungen an Website und Online-Auftritt</p>
+            <div class="price">39 €</div>
+            <ul>
+              <li>regelmäßige Sichtprüfung</li>
+              <li>Änderungsprotokoll</li>
+              <li>Hinweise bei neuen Risiken</li>
+              <li>Priorisierung der nächsten Schritte</li>
+            </ul>
+          </div>
+          <a class="btn" href="mailto:info@dewald-digital.de?subject=Anfrage%20Monatlicher%20Digital-Check">Anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split reverse">
       <div>
-        <h2>Klare Maßnahmen statt Unsicherheit</h2>
-        <p>Keine Theorie – sondern konkrete Schritte.</p>
+        <div class="eyebrow">Vertrauen</div>
+        <h2>Qualitätsmanagement für Ihren digitalen Auftritt.</h2>
+        <p class="lead">
+          Hinter Dewald Digital steht Erfahrung im Qualitätsmanagement sowie in Wirtschaft und öffentlichem Dienst. Der Fokus liegt darauf, komplexe Anforderungen verständlich zu prüfen und in klare Maßnahmen zu übersetzen.
+        </p>
+        <div class="check-list">
+          <div>strukturiertes Vorgehen</div>
+          <div>verständliche Sprache</div>
+          <div>klare Abgrenzung: keine Rechtsberatung</div>
+          <div>Fokus auf kleine Unternehmen</div>
+        </div>
+      </div>
+      <div class="split-visual">
+        <img src="vertrauen.svg" alt="Vertrauen und strukturierte Beratung">
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- VERTRAUEN -->
-  <div class=\"section container\">
-    <div class=\"grid\">
+  <section id="kontakt">
+    <div class="container final-cta">
       <div>
-        <h2>Strukturiert, verständlich, umsetzbar</h2>
-        <p>Erfahrung im Qualitätsmanagement und in Wirtschaft sowie öffentlichem Dienst.</p>
+        <h2>Kostenlose Erstprüfung anfragen</h2>
+        <p>
+          Schreiben Sie kurz, welche Website geprüft werden soll und ob es zusätzlich um KI-Nutzung, Barrierefreiheit oder Marketinginhalte geht.
+        </p>
+        <a class="btn" href="mailto:info@dewald-digital.de?subject=Anfrage%20Dewald%20Digital%20Erstpruefung">E-Mail schreiben</a>
       </div>
-      <img src=\"vertrauen.svg\">
+      <img src="hero.svg" alt="Dewald Digital Erstprüfung">
     </div>
-  </div>
+  </section>
 
-  <!-- PRICING -->
-  <div class=\"section container\" id=\"preise\">
-    <h2>Preise</h2>
-    <div class=\"pricing\">
-      <div class=\"card\">
-        <h3>Website Risiko-Check</h3>
-        <p>ab 49 €</p>
-      </div>
-      <div class=\"card\">
-        <h3>KI Quick Audit</h3>
-        <p>ab 99 €</p>
-      </div>
-      <div class=\"card\">
-        <h3>Monatlicher Digital-Check</h3>
-        <p>ab 39 €</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
   <footer>
-    <a href=\"impressum.html\">Impressum</a> |
-    <a href=\"datenschutz.html\">Datenschutz</a>
+    <div class="container">
+      <div><strong>Dewald Digital</strong> · Marc Dewald-Krause · 46286 Dorsten · <a href="mailto:info@dewald-digital.de">info@dewald-digital.de</a></div>
+      <div style="margin-top: 8px;"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+      <div style="margin-top: 8px;">Hinweis: Die angebotenen Checks sind praxisnahe Ersteinschätzungen und keine Rechtsberatung.</div>
+    </div>
   </footer>
-
 </body>
 </html>
