@@ -3,641 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dewald Digital prüft Websites, KI-Nutzung und digitale Prozesse kleiner Unternehmen auf typische Risiken, Barrierefreiheit und Verbesserungsmöglichkeiten.">
-  <title>Dewald Digital | Website-Checks, KI-Audits & digitale Risikoanalysen</title>
+
+  <title>Dewald Digital</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo1.png">
+  <link rel="apple-touch-icon" href="logo1.png">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f6f7f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f7f8fa;
       color: #111827;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     .container {
-      width: min(1180px, calc(100% - 48px));
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
     }
 
+    /* HEADER */
     .nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+      height: 100px;
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .nav-inner {
-      height: 116px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 40px;
-    }
-
-    .brand {
-      display: flex;
       align-items: center;
-      flex: 0 0 auto;
+      width: 100%;
     }
 
     .brand img {
-      height: 260px;
-      width: auto;
+      height: 70px;
       display: block;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 34px;
-      font-size: 1rem;
-      font-weight: 700;
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
       color: #4b5563;
-      letter-spacing: -0.02em;
-      flex-wrap: nowrap;
+      font-weight: 600;
     }
 
-    .nav-links a:hover {
-      color: #111827;
-    }
-
-    .nav-cta {
-      background: #111827;
-      color: white !important;
-      padding: 12px 22px;
-      border-radius: 999px;
-      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.18);
-    }
-
+    /* HERO */
     .hero {
-      padding: 70px 0 40px;
+      padding: 40px 0;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-      align-items: stretch;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: #6b7280;
+    }
+
+    .hero img {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 60px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .grid img {
+      width: 100%;
+    }
+
+    /* PRICING */
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
     }
 
     .card {
       background: white;
       border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      box-shadow: 0 14px 35px rgba(17, 24, 39, 0.08);
-    }
-
-    .hero-main {
-      padding: 42px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: #eef0f3;
-      color: #6b7280;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 18px;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 14px;
-      line-height: 1.12;
-      letter-spacing: -0.035em;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      max-width: 13ch;
-    }
-
-    h2 {
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
-    }
-
-    h3 {
-      font-size: 1.2rem;
-    }
-
-    p {
-      margin-top: 0;
-    }
-
-    .lead {
-      color: #374151;
-      font-size: 1.1rem;
-      max-width: 65ch;
-      margin-bottom: 24px;
-    }
-
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin: 26px 0;
-    }
-
-    .hero-points div {
-      background: #eef0f3;
-      padding: 12px 14px;
-      border-radius: 12px;
-      font-weight: 700;
-      color: #374151;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      background: #111827;
-      color: white;
-      border: 1px solid #111827;
-      padding: 13px 18px;
-      border-radius: 12px;
-      font-weight: 800;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #111827;
-    }
-
-    .meta {
-      color: #6b7280;
-      font-size: 0.92rem;
-    }
-
-    .hero-side {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .sidebox {
-      background: #eef0f3;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .sidebox strong {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    section {
-      padding: 32px 0;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 20px;
-    }
-
-    .section-head p {
-      color: #6b7280;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .box {
-      padding: 26px;
-    }
-
-    .service-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .service-item {
-      background: white;
-      border: 1px solid #e5e7eb;
       border-radius: 16px;
-      padding: 22px;
+      padding: 24px;
+      text-align: center;
     }
 
-    .tag {
-      display: inline-block;
-      background: #eef0f3;
-      color: #6b7280;
-      border-radius: 999px;
-      padding: 7px 10px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    ul {
-      padding-left: 18px;
-      margin-bottom: 0;
-    }
-
-    li {
-      margin: 8px 0;
-    }
-
-    .price {
-      font-size: 2rem;
-      font-weight: 800;
-      margin: 18px 0 4px;
-      letter-spacing: -0.035em;
-    }
-
-    .small {
-      color: #6b7280;
-      font-size: 0.92rem;
-    }
-
-    .steps {
-      display: grid;
-      gap: 14px;
-    }
-
-    .step {
+    footer {
+      margin-top: 60px;
       padding: 20px;
-    }
-
-    .notice {
-      background: white;
-      border-left: 4px solid #111827;
-      padding: 20px;
-      border-radius: 14px;
-      color: #374151;
-    }
-
-    .cta {
-      padding: 34px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer {
-      padding: 32px 0 60px;
+      text-align: center;
+      font-size: 0.9rem;
       color: #6b7280;
-      font-size: 0.92rem;
     }
 
-    .footer a {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 900px) {
-      .container {
-        width: min(100% - 32px, 1180px);
-      }
-
-      .hero-grid,
-      .grid-2,
-      .grid-3,
-      .service-list {
+    @media (max-width: 768px) {
+      .hero-grid, .grid, .pricing {
         grid-template-columns: 1fr;
-      }
-
-      .hero-main,
-      .hero-side,
-      .box,
-      .cta {
-        padding: 22px;
-      }
-
-      .nav-inner {
-        height: auto;
-        min-height: 84px;
-        align-items: center;
-        flex-direction: row;
-        gap: 16px;
-      }
-
-      .brand img {
-        height: 68px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        font-size: 0.9rem;
-        overflow-x: auto;
-      }
-
-      .nav-cta {
-        padding: 8px 13px;
       }
     }
   </style>
 </head>
 
 <body>
-  <nav class="nav">
+
+  <!-- HEADER -->
+  <div class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#" aria-label="Dewald Digital Startseite">
+      <div class="brand">
         <img src="logo.png" alt="Dewald Digital Logo">
-      </a>
-
+      </div>
       <div class="nav-links">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#pakete">Pakete</a>
-        <a href="#ablauf">Ablauf</a>
-        <a href="#kontakt" class="nav-cta">Kontakt</a>
+        <a href=\"#leistungen\">Leistungen</a>
+        <a href=\"#preise\">Preise</a>
+        <a href=\"#kontakt\">Kontakt</a>
       </div>
     </div>
-  </nav>
+  </div>
 
-  <header class="hero">
-    <div class="container hero-grid">
-      <div class="card hero-main">
-        <div class="eyebrow">Digitale Risiko-Checks für kleine Unternehmen</div>
-        <h1>Website-Checks<br>KI-Audits<br>und klare nächste Schritte.</h1>
-        <p class="lead">
-          Dewald Digital prüft Websites, KI-Nutzung und digitale Außenauftritte kleiner Unternehmen auf typische Risiken, Schwachstellen und Verbesserungspotenziale – verständlich, strukturiert und ohne unnötige Fachsprache.
+  <!-- HERO -->
+  <div class="hero container">
+    <div class="hero-grid">
+      <div>
+        <h1>
+          Website-Checks<br>
+          KI-Audits<br>
+          und klare nächste Schritte
+        </h1>
+        <p>
+          Zwischen Vorschrift und Praxis – wir schaffen Klarheit.
         </p>
-
-        <div class="hero-points">
-          <div>Website & Datenschutz-Basics</div>
-          <div>KI-Nutzung & interne Regeln</div>
-          <div>Barrierefreiheit & BFSG-Basischeck</div>
-          <div>Marketing, Bewertungen & Direktwerbung</div>
-        </div>
-
-        <div class="actions">
-          <a class="btn" href="#kontakt">Kostenlose Erstprüfung anfragen</a>
-          <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
-        </div>
-
-        <p class="meta">
-          Hinweis: Die Checks sind praxisnahe Audits und Handlungsempfehlungen.Bei verbindlichen juristischen Fragen sollte eine spezialisierte Rechtsberatung hinzugezogen werden.
-        </p>
+        <a href=\"mailto:info@dewald-digital.de\" class=\"btn\">Risiko-Check starten</a>
       </div>
-
-      <aside class="card hero-side">
-        <div class="sidebox">
-          <strong>Für wen?</strong>
-          Lokale Dienstleister, kleine Shops, Selbstständige und kleine Unternehmen mit begrenzten internen Ressourcen.
-        </div>
-        <div class="sidebox">
-          <strong>Was erhalten Sie?</strong>
-          Eine verständliche Auswertung mit priorisierten Auffälligkeiten, Risiken und konkreten nächsten Schritten.
-        </div>
-        <div class="sidebox">
-          <strong>Warum jetzt?</strong>
-          Websites, KI-Tools und Online-Marketing werden stärker reguliert. Viele kleine Betriebe haben dafür keine interne Zuständigkeit.
-        </div>
-      </aside>
-    </div>
-  </header>
-
-  <section id="problem">
-    <div class="container">
-      <div class="section-head">
-        <h2>Viele Risiken entstehen nicht absichtlich, sondern aus Zeitmangel.</h2>
-        <p>Impressum, Datenschutz, Cookies, Tracking, KI-Inhalte, Barrierefreiheit, Bewertungen und Newsletter werden im Alltag oft nebenbei erledigt. Dadurch entstehen Lücken, die später teuer oder unangenehm werden können.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card box">
-          <h3>Unklare Website-Pflichten</h3>
-          <p>Viele Seiten laufen seit Jahren, ohne dass Impressum, Datenschutzerklärung, Cookie-Banner, Tracking oder externe Tools sauber geprüft wurden.</p>
-        </div>
-        <div class="card box">
-          <h3>KI ohne interne Regeln</h3>
-          <p>Texte, Bilder, Chatbots oder Tools werden genutzt, aber häufig ohne klare Regeln für Kundendaten, Kennzeichnung, Freigabe oder Verantwortlichkeit.</p>
-        </div>
-        <div class="card box">
-          <h3>Barrierefreiheit wird verschoben</h3>
-          <p>Digitale Barrierefreiheit betrifft immer mehr Online-Angebote. Viele kleine Unternehmen wissen nicht, ob und wie sie handeln sollten.</p>
-        </div>
+      <div>
+        <img src=\"hero.svg\">
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="leistungen">
-    <div class="container">
-      <div class="section-head">
-        <h2>Leistungsbereiche</h2>
-        <p>Die Prüfung erfolgt modular. Sie können mit einem kompakten Check starten und später Umsetzung, Nachprüfung oder laufende Betreuung ergänzen.</p>
-      </div>
-
-      <div class="service-list">
-        <div class="service-item">
-          <span class="tag">01</span>
-          <h3>Datenschutz & Website</h3>
-          <ul>
-            <li>Impressum</li>
-            <li>Datenschutzerklärung</li>
-            <li>Cookies, Tracking und Webanalyse</li>
-            <li>Chatbots und Drittanbieter-Tools</li>
-            <li>Hinweise zu Datenübermittlung und externen Diensten</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <span class="tag">02</span>
-          <h3>KI-Nutzung & KI-Audit</h3>
-          <ul>
-            <li>KI-generierte Texte, Bilder und Inhalte</li>
-            <li>Kennzeichnung und Freigabeprozesse</li>
-            <li>Nutzung von KI-Tools im Betrieb</li>
-            <li>Datenschutz bei KI-Anwendungen</li>
-            <li>interne Regeln für Mitarbeitende</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <span class="tag">03</span>
-          <h3>Digitale Barrierefreiheit</h3>
-          <ul>
-            <li>BFSG-/EAA-Basischeck</li>
-            <li>erkennbare Barrieren auf Websites</li>
-            <li>Kontraste, Struktur, Lesbarkeit und Bedienbarkeit</li>
-            <li>Formulare und Navigation</li>
-            <li>priorisierte Umsetzungsempfehlungen</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <span class="tag">04</span>
-          <h3>E-Mail & Direktmarketing</h3>
-          <ul>
-            <li>Newsletter-Basics</li>
-            <li>Einwilligungen und Abmeldemöglichkeiten</li>
-            <li>Cold-Outreach-Risiken</li>
-            <li>Kontaktformulare und Verteiler</li>
-            <li>praktische Verbesserungen im Versandprozess</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <span class="tag">05</span>
-          <h3>Bewertungen & Werbung</h3>
-          <ul>
-            <li>Testimonials und Kundenstimmen</li>
-            <li>Fake-Bewertungs-Risiken</li>
-            <li>irreführende Werbeaussagen</li>
-            <li>Social-Media-Außendarstellung</li>
-            <li>Qualitätscheck von Marketinginhalten</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <span class="tag">06</span>
-          <h3>Laufende Betreuung</h3>
-          <ul>
-            <li>regelmäßige Nachprüfungen</li>
-            <li>Monats- oder Quartalschecks</li>
-            <li>Änderungsprotokolle</li>
-            <li>Umsetzungsbegleitung</li>
-            <li>Schulungen für einfache interne Regeln</li>
-          </ul>
-        </div>
+  <!-- PROBLEM -->
+  <div class=\"section container\">
+    <div class=\"grid\">
+      <img src=\"problem.svg\">
+      <div>
+        <h2>Viele Websites sind aktuell nicht mehr sauber aufgestellt</h2>
+        <p>DSGVO, KI-Gesetz und Barrierefreiheit betreffen mittlerweile fast jede Website.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="pakete">
-    <div class="container">
-      <div class="section-head">
-        <h2>Einstiegspakete</h2>
-        <p>Für den Start sind die Pakete bewusst kompakt gehalten. Ziel ist ein schneller Überblick statt eines großen Beratungsprojekts.</p>
+  <!-- ANALYSE -->
+  <div class=\"section container\">
+    <div class=\"grid\">
+      <div>
+        <h2>Wir prüfen Ihre Website strukturiert</h2>
+        <p>Sie sehen klar, wo Risiken bestehen und was zu tun ist.</p>
       </div>
+      <img src=\"analyse.svg\">
+    </div>
+  </div>
 
-      <div class="grid-3">
-        <article class="card box">
-          <span class="tag">Start</span>
-          <h3>Website Risiko-Check</h3>
-          <p>Kurzanalyse Ihrer Website auf auffällige Risiken bei Datenschutz-Basics, Cookie-Hinweisen, externen Tools, Inhalten und Barrierefreiheits-Basics.</p>
-          <div class="price">ab 49 €</div>
-          <div class="small">für kleine Websites</div>
-          <ul>
-            <li>1 Website</li>
-            <li>kompakter Prüfbericht</li>
-            <li>priorisierte Handlungsempfehlungen</li>
-          </ul>
-        </article>
-
-        <article class="card box">
-          <span class="tag">KI</span>
-          <h3>KI Quick Audit</h3>
-          <p>Strukturierte Ersteinschätzung Ihrer KI-Nutzung im Unternehmen: Tools, Inhalte, Kundendaten, Freigabeprozesse und einfache interne Regeln.</p>
-          <div class="price">ab 99 €</div>
-          <div class="small">inkl. Fragebogen</div>
-          <ul>
-            <li>KI-Nutzungsfragebogen</li>
-            <li>Risikoübersicht</li>
-            <li>Empfehlungen für interne Regeln</li>
-          </ul>
-        </article>
-
-        <article class="card box">
-          <span class="tag">Betreuung</span>
-          <h3>Monatlicher Digital-Check</h3>
-          <p>Regelmäßige Überprüfung Ihrer Website und digitalen Außenwirkung nach Änderungen, neuen Tools oder neuen Kampagnen.</p>
-          <div class="price">ab 39 € / Monat</div>
-          <div class="small">nach Erstcheck möglich</div>
-          <ul>
-            <li>monatliche oder quartalsweise Prüfung</li>
-            <li>kurzes Änderungsprotokoll</li>
-            <li>laufende Priorisierung</li>
-          </ul>
-        </article>
+  <!-- LÖSUNG -->
+  <div class=\"section container\">
+    <div class=\"grid\">
+      <img src=\"loesung.svg\">
+      <div>
+        <h2>Klare Maßnahmen statt Unsicherheit</h2>
+        <p>Keine Theorie – sondern konkrete Schritte.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="ablauf">
-    <div class="container">
-      <div class="section-head">
-        <h2>So läuft die Zusammenarbeit ab</h2>
-        <p>Einfacher Einstieg, klare Auswertung, keine unnötigen Meetings.</p>
+  <!-- VERTRAUEN -->
+  <div class=\"section container\">
+    <div class=\"grid\">
+      <div>
+        <h2>Strukturiert, verständlich, umsetzbar</h2>
+        <p>Erfahrung im Qualitätsmanagement und in Wirtschaft sowie öffentlichem Dienst.</p>
       </div>
-      <div class="steps">
-        <div class="card step"><strong>1. Anfrage senden</strong>  Sie nennen kurz Ihre Website und den gewünschten Schwerpunkt.</div>
-        <div class="card step"><strong>2. Umfang klären</strong>  Sie erhalten eine kurze Rückmeldung, welches Paket sinnvoll ist.</div>
-        <div class="card step"><strong>3. Analyse durchführen</strong>  Dewald Digital prüft Website, Inhalte, Tools oder KI-Nutzung anhand einer strukturierten Checkliste.</div>
-        <div class="card step"><strong>4. Ergebnis erhalten</strong>  Sie erhalten einen verständlichen Bericht mit Prioritäten und konkreten nächsten Schritten.</div>
+      <img src=\"vertrauen.svg\">
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class=\"section container\" id=\"preise\">
+    <h2>Preise</h2>
+    <div class=\"pricing\">
+      <div class=\"card\">
+        <h3>Website Risiko-Check</h3>
+        <p>ab 49 €</p>
+      </div>
+      <div class=\"card\">
+        <h3>KI Quick Audit</h3>
+        <p>ab 99 €</p>
+      </div>
+      <div class=\"card\">
+        <h3>Monatlicher Digital-Check</h3>
+        <p>ab 39 €</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="vertrauen">
-    <div class="container">
-      <div class="section-head">
-        <h2>Warum Dewald Digital?</h2>
-        <p>Der Fokus liegt auf Verständlichkeit, Priorisierung und pragmatischer Umsetzung für kleine Unternehmen.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card box"><h3>Verständlich</h3><p>Sie erhalten keine unübersichtliche Fachabhandlung, sondern eine klare Einschätzung mit konkreten Handlungspunkten.</p></div>
-        <div class="card box"><h3>Pragmatisch</h3><p>Der Einstieg ist bewusst klein gehalten. Erst prüfen, dann priorisieren, dann gezielt verbessern.</p></div>
-        <div class="card box"><h3>Für KMU gedacht</h3><p>Die Leistungen richten sich an kleine Unternehmen, die keine eigene Rechts-, IT- oder Compliance-Abteilung haben.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="hinweis">
-    <div class="container">
-      <div class="notice">
-        <strong>Wichtiger Hinweis:</strong> Dewald Digital bietet strukturierte Prüfungen, Risikoübersichten, Handlungsempfehlungen und Umsetzungsbegleitung im digitalen Raum. Die Leistungen ersetzen keine Rechtsberatung und keine verbindliche juristische Prüfung durch eine zugelassene Rechtsanwältin oder einen zugelassenen Rechtsanwalt.
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt">
-    <div class="container">
-      <div class="card cta">
-        <div>
-          <h2>Kostenlose Erstprüfung anfragen</h2>
-          <p>Schreiben Sie kurz, welche Website geprüft werden soll und ob es zusätzlich um KI-Nutzung, Barrierefreiheit oder Marketinginhalte geht.</p>
-        </div>
-        <a class="btn" href="mailto:info@dewald-digital.de?subject=Anfrage%20Dewald%20Digital%20Erstpruefung">E-Mail schreiben</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div><strong>Dewald Digital</strong> · Marc Dewald-Krause · 46286 Dorsten · <a href="mailto:info@dewald-digital.de">info@dewald-digital.de</a></div>
-      <div style="margin-top: 8px;"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
-      <div style="margin-top: 8px;">Hinweis: Die angebotenen Checks sind praxisnahe Ersteinschätzungen und keine klassische Rechtsberatung.</div>
-    </div>
+  <!-- FOOTER -->
+  <footer>
+    <a href=\"impressum.html\">Impressum</a> |
+    <a href=\"datenschutz.html\">Datenschutz</a>
   </footer>
+
 </body>
 </html>
